@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActivityType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="IncidentID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ActivityType1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Incident_Event" Relationship="Self.FK_ActivityType_Incident_Event" FromRole="ActivityType" ToRole="Incident_Event" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_ActivityType" FromRole="ActivityType" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="ActMonitor">
+    <Key>
+      <PropertyRef Name="CAR_Number" />
+    </Key>
+    <Property Name="CAR_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scheduled_Today_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date_and_Time_of_CAR_Submission" Type="DateTime" Precision="7" />
+    <Property Name="Unique_CAR_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Network_Grid_BA" Type="Int32" />
+    <Property Name="Business_Zone__Grid" Type="Int32" />
+    <Property Name="DMZ__Facility" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Affected_Barangay_s_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Affected_Municipality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="List_of_Affected_MRUs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="List_of_Affected_DMAs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Number_of_Affected_Households" Type="Int32" />
+    <Property Name="Classification" Type="Int32" />
+    <Property Name="Incident" Type="Int32" />
+    <Property Name="Type_of_Activity" Type="Int32" />
+    <Property Name="Equipment__Appurtenance" Type="Int32" />
+    <Property Name="Type_of_Equipment_Appurtenance" Type="Int32" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Affected_Area" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Contractor" Type="Int32" />
+    <Property Name="Means_of_Notification" Type="Int32" />
+    <Property Name="Need_Media_Advisory" Type="Int32" />
+    <Property Name="OIM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SIM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CIM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks__Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Prework_Completion" Type="DateTime" Precision="3" />
+    <Property Name="Interruption_of_Service" Type="DateTime" Precision="3" />
+    <Property Name="Physical_Completion" Type="DateTime" Precision="3" />
+    <Property Name="Return_of_Service" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="Double" />
+    <Property Name="Sender_Receiver__Date_Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Classification1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Actual_Date_and_Time_of_Start" Type="DateTime" Precision="3" />
+    <Property Name="Actual_Date_and_Time_of_Service_Interruption" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Actual_Date_and_Time_of_Completion" Type="DateTime" Precision="3" />
+    <Property Name="Actual_Date_and_Time_of_Service_Return" Type="DateTime" Precision="3" />
+    <Property Name="Actual_Duration_of_Activity__in_hours_" Type="Double" />
+    <Property Name="Variance_in_Duration__Agreed_vs_Actual_" Type="Double" />
+    <Property Name="Reported_by_and_time_of_sign_on__" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Closed_out_by_and_time_of_sign_off" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Initial_Alert_Level_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Incident_Escalation___Yes_or_No_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="With_or_without_service_interruption___Yes_or_No_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Duty__last_update_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Findings" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActivityType" Relationship="Self.FK_ActMonitor_ActivityType" FromRole="ActMonitor" ToRole="ActivityType" />
+    <NavigationProperty Name="BusinessZone_Grid" Relationship="Self.FK_ActMonitor_BusinessZone_Grid" FromRole="ActMonitor" ToRole="BusinessZone_Grid" />
+    <NavigationProperty Name="Classification2" Relationship="Self.FK_ActMonitor_Classification" FromRole="ActMonitor" ToRole="Classification" />
+    <NavigationProperty Name="Contractor1" Relationship="Self.FK_ActMonitor_Contractor" FromRole="ActMonitor" ToRole="Contractor" />
+    <NavigationProperty Name="DMZFacility" Relationship="Self.FK_ActMonitor_DMZFacility" FromRole="ActMonitor" ToRole="DMZFacility" />
+    <NavigationProperty Name="Equipment_Appurtenance" Relationship="Self.FK_ActMonitor_Equipment_Appurtenance" FromRole="ActMonitor" ToRole="Equipment_Appurtenance" />
+    <NavigationProperty Name="Incident_Event" Relationship="Self.FK_ActMonitor_Incident_Event1" FromRole="ActMonitor" ToRole="Incident_Event" />
+    <NavigationProperty Name="NetworkGrid_BA" Relationship="Self.FK_ActMonitor_NetworkGrid_BA" FromRole="ActMonitor" ToRole="NetworkGrid_BA" />
+    <NavigationProperty Name="Size1" Relationship="Self.FK_ActMonitor_Size" FromRole="ActMonitor" ToRole="Size" />
+    <NavigationProperty Name="Type_" Relationship="Self.FK_ActMonitor_Type_" FromRole="ActMonitor" ToRole="Type_" />
+    <NavigationProperty Name="Details_Health_Safety" Relationship="Self.FK_Details_Health_Safety_ActMonitor" FromRole="ActMonitor" ToRole="Details_Health_Safety" />
+    <NavigationProperty Name="Details_ManPower" Relationship="Self.FK_Details_ManPower_ActMonitor" FromRole="ActMonitor" ToRole="Details_ManPower" />
+    <NavigationProperty Name="Details_Materials" Relationship="Self.FK_Details_Materials_ActMonitor" FromRole="ActMonitor" ToRole="Details_Materials" />
+    <NavigationProperty Name="Details_Methodology" Relationship="Self.FK_Details_Methodology_ActMonitor" FromRole="ActMonitor" ToRole="Details_Methodology" />
+    <NavigationProperty Name="Details_SiteMap" Relationship="Self.FK_Details_SiteMap_ActMonitor" FromRole="ActMonitor" ToRole="Details_SiteMap" />
+    <NavigationProperty Name="Details_ToolsEquipment" Relationship="Self.FK_Details_ToolsEquipment_ActMonitor" FromRole="ActMonitor" ToRole="Details_ToolsEquipment" />
+    <NavigationProperty Name="Details_ValveManipulationTable" Relationship="Self.FK_Details_ValveManipulationTable_ActMonitor" FromRole="ActMonitor" ToRole="Details_ValveManipulationTable" />
+    <NavigationProperty Name="Details_WhatIFs" Relationship="Self.FK_Details_WhatIFs_ActMonitor" FromRole="ActMonitor" ToRole="Details_WhatIFs" />
+    <NavigationProperty Name="Updates" Relationship="Self.FK_Update_ActMonitor" FromRole="ActMonitor" ToRole="Update" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="BusinessZone_Grid">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NetworkGridID" Type="Int32" Nullable="false" />
+    <Property Name="BusinessZone_Grid1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_BusinessZone_Grid" FromRole="BusinessZone_Grid" ToRole="ActMonitor" />
+    <NavigationProperty Name="NetworkGrid_BA" Relationship="Self.FK_BusinessZone_Grid_NetworkGrid_BA" FromRole="BusinessZone_Grid" ToRole="NetworkGrid_BA" />
+    <NavigationProperty Name="DMZFacilities" Relationship="Self.FK_DMZFacility_BusinessZone_Grid" FromRole="BusinessZone_Grid" ToRole="DMZFacility" />
+  </EntityType>
+  <EntityType Name="Classification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Classification1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_Classification" FromRole="Classification" ToRole="ActMonitor" />
+    <NavigationProperty Name="Incident_Event" Relationship="Self.FK_Incident_Event_Classification" FromRole="Classification" ToRole="Incident_Event" />
+  </EntityType>
+  <EntityType Name="Contractor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contractorractor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_Contractor" FromRole="Contractor" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_Health_Safety">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Health_Safety" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_Health_Safety_ActMonitor" FromRole="Details_Health_Safety" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_ManPower">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="Manpower" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_ManPower_ActMonitor" FromRole="Details_ManPower" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_Materials">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Materials" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_Materials_ActMonitor" FromRole="Details_Materials" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_Methodology">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="MethodologyNumber" Type="Int32" Nullable="false" />
+    <Property Name="Activity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Start" Type="DateTime" Precision="3" />
+    <Property Name="End" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="Double" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_Methodology_ActMonitor" FromRole="Details_Methodology" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_Milestones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MilestoneNumber" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Propsed" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CarNo" Type="Int32" Nullable="false" />
+    <Property Name="Actual" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Details_SiteMap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CARID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SiteMap" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_SiteMap_ActMonitor" FromRole="Details_SiteMap" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_ToolsEquipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tools_Equipment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_ToolsEquipment_ActMonitor" FromRole="Details_ToolsEquipment" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_ValveManipulationTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="ValveNumber" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PresentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Proposed_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status_After_the_Activity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_ValveManipulationTable_ActMonitor" FromRole="Details_ValveManipulationTable" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Details_WhatIFs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WhatIFs" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Details_WhatIFs_ActMonitor" FromRole="Details_WhatIFs" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="DMZFacility">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessZoneID" Type="Int32" Nullable="false" />
+    <Property Name="DMZ_Facility" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_DMZFacility" FromRole="DMZFacility" ToRole="ActMonitor" />
+    <NavigationProperty Name="BusinessZone_Grid" Relationship="Self.FK_DMZFacility_BusinessZone_Grid" FromRole="DMZFacility" ToRole="BusinessZone_Grid" />
+  </EntityType>
+  <EntityType Name="Equipment_Appurtenance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Equipment_Appurtenance1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_Equipment_Appurtenance" FromRole="Equipment_Appurtenance" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Incident_Event">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CatergoryID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Incident_Event1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ActivityTypes" Relationship="Self.FK_ActivityType_Incident_Event" FromRole="Incident_Event" ToRole="ActivityType" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_Incident_Event1" FromRole="Incident_Event" ToRole="ActMonitor" />
+    <NavigationProperty Name="Classification" Relationship="Self.FK_Incident_Event_Classification" FromRole="Incident_Event" ToRole="Classification" />
+  </EntityType>
+  <EntityType Name="LocByNum">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Loc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfIncidents" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NetworkGrid_BA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NetworkGrid_BA1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_NetworkGrid_BA" FromRole="NetworkGrid_BA" ToRole="ActMonitor" />
+    <NavigationProperty Name="BusinessZone_Grid" Relationship="Self.FK_BusinessZone_Grid_NetworkGrid_BA" FromRole="NetworkGrid_BA" ToRole="BusinessZone_Grid" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Size1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_Size" FromRole="Size" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Updates" Relationship="Self.FK_Update_Status" FromRole="Status" ToRole="Update" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Type_">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ActMonitors" Relationship="Self.FK_ActMonitor_Type_" FromRole="Type_" ToRole="ActMonitor" />
+  </EntityType>
+  <EntityType Name="Update">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CARID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UpdateNo" Type="Int32" Nullable="false" />
+    <Property Name="UpdateTYPE" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Date_Submitted" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Nature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IncidentDiscoveryReporter" Type="Int32" />
+    <Property Name="RootCause" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EffectsOnCustomers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SpecificAreasAffected" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoOfHouseholdsAffected" Type="Int32" />
+    <Property Name="KeyAccounts_VIPsAffected" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MediaExposure_ReputationRisk" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InterimSolutions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PermanentSolution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EstimatedDateandTimeofCompletion" Type="DateTime" Precision="3" />
+    <Property Name="OIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Updates" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ActMonitor" Relationship="Self.FK_Update_ActMonitor" FromRole="Update" ToRole="ActMonitor" />
+    <NavigationProperty Name="Status1" Relationship="Self.FK_Update_Status" FromRole="Update" ToRole="Status" />
+    <NavigationProperty Name="Update_Type" Relationship="Self.FK_Update_Update_Type" FromRole="Update" ToRole="Update_Type" />
+  </EntityType>
+  <EntityType Name="Update_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Update_Type1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Updates" Relationship="Self.FK_Update_Update_Type" FromRole="Update_Type" ToRole="Update" />
+  </EntityType>
+  <EntityType Name="UserInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileNum" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AffectedArea">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="AffectedArea1" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AffectedArea1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ActivityType_Incident_Event">
+    <End Role="Incident_Event" Type="Self.Incident_Event" Multiplicity="1" />
+    <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incident_Event">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActivityType">
+        <PropertyRef Name="IncidentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_ActivityType">
+    <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Type_of_Activity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_BusinessZone_Grid">
+    <End Role="BusinessZone_Grid" Type="Self.BusinessZone_Grid" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessZone_Grid">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Business_Zone__Grid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_Classification">
+    <End Role="Classification" Type="Self.Classification" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classification">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Classification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_Contractor">
+    <End Role="Contractor" Type="Self.Contractor" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contractor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Contractor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_DMZFacility">
+    <End Role="DMZFacility" Type="Self.DMZFacility" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DMZFacility">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="DMZ__Facility" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_Equipment_Appurtenance">
+    <End Role="Equipment_Appurtenance" Type="Self.Equipment_Appurtenance" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment_Appurtenance">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Equipment__Appurtenance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_Incident_Event1">
+    <End Role="Incident_Event" Type="Self.Incident_Event" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incident_Event">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Incident" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_NetworkGrid_BA">
+    <End Role="NetworkGrid_BA" Type="Self.NetworkGrid_BA" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NetworkGrid_BA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Network_Grid_BA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_Size">
+    <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Size" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActMonitor_Type_">
+    <End Role="Type_" Type="Self.Type_" Multiplicity="0..1" />
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActMonitor">
+        <PropertyRef Name="Type_of_Activity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_Health_Safety_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_Health_Safety" Type="Self.Details_Health_Safety" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_Health_Safety">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_ManPower_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_ManPower" Type="Self.Details_ManPower" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_ManPower">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_Materials_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_Materials" Type="Self.Details_Materials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_Materials">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_Methodology_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_Methodology" Type="Self.Details_Methodology" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_Methodology">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_SiteMap_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_SiteMap" Type="Self.Details_SiteMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_SiteMap">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_ToolsEquipment_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_ToolsEquipment" Type="Self.Details_ToolsEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_ToolsEquipment">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_ValveManipulationTable_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_ValveManipulationTable" Type="Self.Details_ValveManipulationTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_ValveManipulationTable">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_WhatIFs_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Details_WhatIFs" Type="Self.Details_WhatIFs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Details_WhatIFs">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Update_ActMonitor">
+    <End Role="ActMonitor" Type="Self.ActMonitor" Multiplicity="1" />
+    <End Role="Update" Type="Self.Update" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActMonitor">
+        <PropertyRef Name="CAR_Number" />
+      </Principal>
+      <Dependent Role="Update">
+        <PropertyRef Name="CARID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BusinessZone_Grid_NetworkGrid_BA">
+    <End Role="NetworkGrid_BA" Type="Self.NetworkGrid_BA" Multiplicity="1" />
+    <End Role="BusinessZone_Grid" Type="Self.BusinessZone_Grid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NetworkGrid_BA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BusinessZone_Grid">
+        <PropertyRef Name="NetworkGridID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DMZFacility_BusinessZone_Grid">
+    <End Role="BusinessZone_Grid" Type="Self.BusinessZone_Grid" Multiplicity="1" />
+    <End Role="DMZFacility" Type="Self.DMZFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessZone_Grid">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DMZFacility">
+        <PropertyRef Name="BusinessZoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incident_Event_Classification">
+    <End Role="Classification" Type="Self.Classification" Multiplicity="1" />
+    <End Role="Incident_Event" Type="Self.Incident_Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classification">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Incident_Event">
+        <PropertyRef Name="CatergoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Update_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Update" Type="Self.Update" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Update">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Update_Update_Type">
+    <End Role="Update_Type" Type="Self.Update_Type" Multiplicity="1" />
+    <End Role="Update" Type="Self.Update" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Update_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Update">
+        <PropertyRef Name="UpdateTYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="ActivityTypes" EntityType="Self.ActivityType" />
+    <EntitySet Name="ActMonitors" EntityType="Self.ActMonitor" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="BusinessZone_Grid" EntityType="Self.BusinessZone_Grid" />
+    <EntitySet Name="Classifications" EntityType="Self.Classification" />
+    <EntitySet Name="Contractors" EntityType="Self.Contractor" />
+    <EntitySet Name="Details_Health_Safety" EntityType="Self.Details_Health_Safety" />
+    <EntitySet Name="Details_ManPower" EntityType="Self.Details_ManPower" />
+    <EntitySet Name="Details_Materials" EntityType="Self.Details_Materials" />
+    <EntitySet Name="Details_Methodology" EntityType="Self.Details_Methodology" />
+    <EntitySet Name="Details_Milestones" EntityType="Self.Details_Milestones" />
+    <EntitySet Name="Details_SiteMap" EntityType="Self.Details_SiteMap" />
+    <EntitySet Name="Details_ToolsEquipment" EntityType="Self.Details_ToolsEquipment" />
+    <EntitySet Name="Details_ValveManipulationTable" EntityType="Self.Details_ValveManipulationTable" />
+    <EntitySet Name="Details_WhatIFs" EntityType="Self.Details_WhatIFs" />
+    <EntitySet Name="DMZFacilities" EntityType="Self.DMZFacility" />
+    <EntitySet Name="Equipment_Appurtenances" EntityType="Self.Equipment_Appurtenance" />
+    <EntitySet Name="Incident_Event" EntityType="Self.Incident_Event" />
+    <EntitySet Name="LocByNums" EntityType="Self.LocByNum" />
+    <EntitySet Name="NetworkGrid_BA" EntityType="Self.NetworkGrid_BA" />
+    <EntitySet Name="Sizes" EntityType="Self.Size" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Type_" EntityType="Self.Type_" />
+    <EntitySet Name="Updates" EntityType="Self.Update" />
+    <EntitySet Name="Update_Type" EntityType="Self.Update_Type" />
+    <EntitySet Name="UserInformations" EntityType="Self.UserInformation" />
+    <EntitySet Name="AffectedAreas" EntityType="Self.AffectedArea" />
+    <AssociationSet Name="FK_ActivityType_Incident_Event" Association="Self.FK_ActivityType_Incident_Event">
+      <End Role="Incident_Event" EntitySet="Incident_Event" />
+      <End Role="ActivityType" EntitySet="ActivityTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_ActivityType" Association="Self.FK_ActMonitor_ActivityType">
+      <End Role="ActivityType" EntitySet="ActivityTypes" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_BusinessZone_Grid" Association="Self.FK_ActMonitor_BusinessZone_Grid">
+      <End Role="BusinessZone_Grid" EntitySet="BusinessZone_Grid" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_Classification" Association="Self.FK_ActMonitor_Classification">
+      <End Role="Classification" EntitySet="Classifications" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_Contractor" Association="Self.FK_ActMonitor_Contractor">
+      <End Role="Contractor" EntitySet="Contractors" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_DMZFacility" Association="Self.FK_ActMonitor_DMZFacility">
+      <End Role="DMZFacility" EntitySet="DMZFacilities" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_Equipment_Appurtenance" Association="Self.FK_ActMonitor_Equipment_Appurtenance">
+      <End Role="Equipment_Appurtenance" EntitySet="Equipment_Appurtenances" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_Incident_Event1" Association="Self.FK_ActMonitor_Incident_Event1">
+      <End Role="Incident_Event" EntitySet="Incident_Event" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_NetworkGrid_BA" Association="Self.FK_ActMonitor_NetworkGrid_BA">
+      <End Role="NetworkGrid_BA" EntitySet="NetworkGrid_BA" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_Size" Association="Self.FK_ActMonitor_Size">
+      <End Role="Size" EntitySet="Sizes" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActMonitor_Type_" Association="Self.FK_ActMonitor_Type_">
+      <End Role="Type_" EntitySet="Type_" />
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_Health_Safety_ActMonitor" Association="Self.FK_Details_Health_Safety_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_Health_Safety" EntitySet="Details_Health_Safety" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_ManPower_ActMonitor" Association="Self.FK_Details_ManPower_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_ManPower" EntitySet="Details_ManPower" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_Materials_ActMonitor" Association="Self.FK_Details_Materials_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_Materials" EntitySet="Details_Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_Methodology_ActMonitor" Association="Self.FK_Details_Methodology_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_Methodology" EntitySet="Details_Methodology" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_SiteMap_ActMonitor" Association="Self.FK_Details_SiteMap_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_SiteMap" EntitySet="Details_SiteMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_ToolsEquipment_ActMonitor" Association="Self.FK_Details_ToolsEquipment_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_ToolsEquipment" EntitySet="Details_ToolsEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_ValveManipulationTable_ActMonitor" Association="Self.FK_Details_ValveManipulationTable_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_ValveManipulationTable" EntitySet="Details_ValveManipulationTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_WhatIFs_ActMonitor" Association="Self.FK_Details_WhatIFs_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Details_WhatIFs" EntitySet="Details_WhatIFs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Update_ActMonitor" Association="Self.FK_Update_ActMonitor">
+      <End Role="ActMonitor" EntitySet="ActMonitors" />
+      <End Role="Update" EntitySet="Updates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BusinessZone_Grid_NetworkGrid_BA" Association="Self.FK_BusinessZone_Grid_NetworkGrid_BA">
+      <End Role="NetworkGrid_BA" EntitySet="NetworkGrid_BA" />
+      <End Role="BusinessZone_Grid" EntitySet="BusinessZone_Grid" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DMZFacility_BusinessZone_Grid" Association="Self.FK_DMZFacility_BusinessZone_Grid">
+      <End Role="BusinessZone_Grid" EntitySet="BusinessZone_Grid" />
+      <End Role="DMZFacility" EntitySet="DMZFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incident_Event_Classification" Association="Self.FK_Incident_Event_Classification">
+      <End Role="Classification" EntitySet="Classifications" />
+      <End Role="Incident_Event" EntitySet="Incident_Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Update_Status" Association="Self.FK_Update_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Update" EntitySet="Updates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Update_Update_Type" Association="Self.FK_Update_Update_Type">
+      <End Role="Update_Type" EntitySet="Update_Type" />
+      <End Role="Update" EntitySet="Updates" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+</Schema>

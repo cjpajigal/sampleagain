@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityTypes">
+      <EntityTypeMapping TypeName="Model.ActivityType">
+        <MappingFragment StoreEntitySet="ActivityType">
+          <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ActivityType1" ColumnName="ActivityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActMonitors">
+      <EntityTypeMapping TypeName="Model.ActMonitor">
+        <MappingFragment StoreEntitySet="ActMonitor">
+          <ScalarProperty Name="CAR_Number" ColumnName="CAR Number" />
+          <ScalarProperty Name="Scheduled_Today_" ColumnName="Scheduled Today?" />
+          <ScalarProperty Name="Date_and_Time_of_CAR_Submission" ColumnName="Date and Time of CAR Submission" />
+          <ScalarProperty Name="Unique_CAR_ID" ColumnName="Unique CAR ID" />
+          <ScalarProperty Name="Network_Grid_BA" ColumnName="Network Grid/BA" />
+          <ScalarProperty Name="Business_Zone__Grid" ColumnName="Business Zone/ Grid" />
+          <ScalarProperty Name="DMZ__Facility" ColumnName="DMZ/ Facility" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Affected_Barangay_s_" ColumnName="Affected Barangay/s " />
+          <ScalarProperty Name="Affected_Municipality" ColumnName="Affected Municipality" />
+          <ScalarProperty Name="List_of_Affected_MRUs" ColumnName="List of Affected MRUs" />
+          <ScalarProperty Name="List_of_Affected_DMAs" ColumnName="List of Affected DMAs" />
+          <ScalarProperty Name="Number_of_Affected_Households" ColumnName="Number of Affected Households" />
+          <ScalarProperty Name="Classification" ColumnName="Classification" />
+          <ScalarProperty Name="Incident" ColumnName="Incident" />
+          <ScalarProperty Name="Type_of_Activity" ColumnName="Type of Activity" />
+          <ScalarProperty Name="Equipment__Appurtenance" ColumnName="Equipment/ Appurtenance" />
+          <ScalarProperty Name="Type_of_Equipment_Appurtenance" ColumnName="Type of Equipment/Appurtenance" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Affected_Area" ColumnName="Affected Area" />
+          <ScalarProperty Name="Contractor" ColumnName="Contractor" />
+          <ScalarProperty Name="Means_of_Notification" ColumnName="Means of Notification" />
+          <ScalarProperty Name="Need_Media_Advisory" ColumnName="Need Media Advisory" />
+          <ScalarProperty Name="OIM" ColumnName="OIM" />
+          <ScalarProperty Name="SIM" ColumnName="SIM" />
+          <ScalarProperty Name="CIM" ColumnName="CIM" />
+          <ScalarProperty Name="Remarks__Comments" ColumnName="Remarks/_Comments" />
+          <ScalarProperty Name="Prework_Completion" ColumnName="Prework Completion" />
+          <ScalarProperty Name="Interruption_of_Service" ColumnName="Interruption of Service" />
+          <ScalarProperty Name="Physical_Completion" ColumnName="Physical Completion" />
+          <ScalarProperty Name="Return_of_Service" ColumnName="Return of Service" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Sender_Receiver__Date_Time" ColumnName="Sender/Receiver/_Date-Time" />
+          <ScalarProperty Name="Classification1" ColumnName="Classification1" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Actual_Date_and_Time_of_Start" ColumnName="Actual Date and Time of Start" />
+          <ScalarProperty Name="Actual_Date_and_Time_of_Service_Interruption" ColumnName="Actual Date and Time of Service Interruption" />
+          <ScalarProperty Name="Actual_Date_and_Time_of_Completion" ColumnName="Actual Date and Time of Completion" />
+          <ScalarProperty Name="Actual_Date_and_Time_of_Service_Return" ColumnName="Actual Date and Time of Service Return" />
+          <ScalarProperty Name="Actual_Duration_of_Activity__in_hours_" ColumnName="Actual Duration of Activity (in hours)" />
+          <ScalarProperty Name="Variance_in_Duration__Agreed_vs_Actual_" ColumnName="Variance in Duration (Agreed vs Actual)" />
+          <ScalarProperty Name="Reported_by_and_time_of_sign_on__" ColumnName="Reported by and time of sign-on _" />
+          <ScalarProperty Name="Closed_out_by_and_time_of_sign_off" ColumnName="Closed-out by and time of_sign-off" />
+          <ScalarProperty Name="Initial_Alert_Level_" ColumnName="Initial Alert Level_" />
+          <ScalarProperty Name="Incident_Escalation___Yes_or_No_" ColumnName="Incident Escalation_ (Yes or No)" />
+          <ScalarProperty Name="With_or_without_service_interruption___Yes_or_No_" ColumnName="With or without service interruption _(Yes or No)" />
+          <ScalarProperty Name="Duty__last_update_" ColumnName="Duty (last update)" />
+          <ScalarProperty Name="Findings" ColumnName="Findings" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="Model.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="Model.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="Model.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="Model.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessZone_Grid">
+      <EntityTypeMapping TypeName="Model.BusinessZone_Grid">
+        <MappingFragment StoreEntitySet="BusinessZone_Grid">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NetworkGridID" ColumnName="NetworkGridID" />
+          <ScalarProperty Name="BusinessZone_Grid1" ColumnName="BusinessZone_Grid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Classifications">
+      <EntityTypeMapping TypeName="Model.Classification">
+        <MappingFragment StoreEntitySet="Classification">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Classification1" ColumnName="Classification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contractors">
+      <EntityTypeMapping TypeName="Model.Contractor">
+        <MappingFragment StoreEntitySet="Contractor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Contractorractor" ColumnName="Contractorractor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_Health_Safety">
+      <EntityTypeMapping TypeName="Model.Details_Health_Safety">
+        <MappingFragment StoreEntitySet="Details_Health_Safety">
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Health_Safety" ColumnName="Health_Safety" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_ManPower">
+      <EntityTypeMapping TypeName="Model.Details_ManPower">
+        <MappingFragment StoreEntitySet="Details_ManPower">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="Manpower" ColumnName="Manpower" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_Materials">
+      <EntityTypeMapping TypeName="Model.Details_Materials">
+        <MappingFragment StoreEntitySet="Details_Materials">
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Materials" ColumnName="Materials" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_Methodology">
+      <EntityTypeMapping TypeName="Model.Details_Methodology">
+        <MappingFragment StoreEntitySet="Details_Methodology">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="MethodologyNumber" ColumnName="MethodologyNumber" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="End" ColumnName="End" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_Milestones">
+      <EntityTypeMapping TypeName="Model.Details_Milestones">
+        <MappingFragment StoreEntitySet="Details_Milestones">
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="MilestoneNumber" ColumnName="MilestoneNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Propsed" ColumnName="Propsed" />
+          <ScalarProperty Name="CarNo" ColumnName="CarNo" />
+          <ScalarProperty Name="Actual" ColumnName="Actual" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_SiteMap">
+      <EntityTypeMapping TypeName="Model.Details_SiteMap">
+        <MappingFragment StoreEntitySet="Details_SiteMap">
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SiteMap" ColumnName="SiteMap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_ToolsEquipment">
+      <EntityTypeMapping TypeName="Model.Details_ToolsEquipment">
+        <MappingFragment StoreEntitySet="Details_ToolsEquipment">
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tools_Equipment" ColumnName="Tools_Equipment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_ValveManipulationTable">
+      <EntityTypeMapping TypeName="Model.Details_ValveManipulationTable">
+        <MappingFragment StoreEntitySet="Details_ValveManipulationTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ValveNumber" ColumnName="ValveNumber" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="PresentStatus" ColumnName="PresentStatus" />
+          <ScalarProperty Name="Proposed_Status" ColumnName="Proposed Status" />
+          <ScalarProperty Name="Status_After_the_Activity" ColumnName="Status After the Activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_WhatIFs">
+      <EntityTypeMapping TypeName="Model.Details_WhatIFs">
+        <MappingFragment StoreEntitySet="Details_WhatIFs">
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WhatIFs" ColumnName="WhatIFs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMZFacilities">
+      <EntityTypeMapping TypeName="Model.DMZFacility">
+        <MappingFragment StoreEntitySet="DMZFacility">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BusinessZoneID" ColumnName="BusinessZoneID" />
+          <ScalarProperty Name="DMZ_Facility" ColumnName="DMZ_Facility" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipment_Appurtenances">
+      <EntityTypeMapping TypeName="Model.Equipment_Appurtenance">
+        <MappingFragment StoreEntitySet="Equipment Appurtenance">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Equipment_Appurtenance1" ColumnName="Equipment/Appurtenance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incident_Event">
+      <EntityTypeMapping TypeName="Model.Incident_Event">
+        <MappingFragment StoreEntitySet="Incident_Event">
+          <ScalarProperty Name="CatergoryID" ColumnName="CatergoryID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Incident_Event1" ColumnName="Incident_Event" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocByNums">
+      <EntityTypeMapping TypeName="Model.LocByNum">
+        <MappingFragment StoreEntitySet="LocByNum">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Loc" ColumnName="Loc" />
+          <ScalarProperty Name="NumberOfIncidents" ColumnName="NumberOfIncidents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkGrid_BA">
+      <EntityTypeMapping TypeName="Model.NetworkGrid_BA">
+        <MappingFragment StoreEntitySet="NetworkGrid_BA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NetworkGrid_BA1" ColumnName="NetworkGrid_BA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sizes">
+      <EntityTypeMapping TypeName="Model.Size">
+        <MappingFragment StoreEntitySet="Size">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Size1" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="Model.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Status1" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_">
+      <EntityTypeMapping TypeName="Model.Type_">
+        <MappingFragment StoreEntitySet="Type$">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Updates">
+      <EntityTypeMapping TypeName="Model.Update">
+        <MappingFragment StoreEntitySet="Update">
+          <ScalarProperty Name="CARID" ColumnName="CARID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UpdateNo" ColumnName="UpdateNo" />
+          <ScalarProperty Name="UpdateTYPE" ColumnName="UpdateTYPE" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date_Submitted" ColumnName="Date Submitted" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="BusinessArea" ColumnName="BusinessArea" />
+          <ScalarProperty Name="IncidentDiscoveryReporter" ColumnName="IncidentDiscoveryReporter" />
+          <ScalarProperty Name="RootCause" ColumnName="RootCause" />
+          <ScalarProperty Name="EffectsOnCustomers" ColumnName="EffectsOnCustomers" />
+          <ScalarProperty Name="SpecificAreasAffected" ColumnName="SpecificAreasAffected" />
+          <ScalarProperty Name="NoOfHouseholdsAffected" ColumnName="NoOfHouseholdsAffected" />
+          <ScalarProperty Name="KeyAccounts_VIPsAffected" ColumnName="KeyAccounts_VIPsAffected" />
+          <ScalarProperty Name="MediaExposure_ReputationRisk" ColumnName="MediaExposure_ReputationRisk" />
+          <ScalarProperty Name="InterimSolutions" ColumnName="InterimSolutions" />
+          <ScalarProperty Name="PermanentSolution" ColumnName="PermanentSolution" />
+          <ScalarProperty Name="EstimatedDateandTimeofCompletion" ColumnName="EstimatedDateandTimeofCompletion" />
+          <ScalarProperty Name="OIM" ColumnName="OIM" />
+          <ScalarProperty Name="SIM" ColumnName="SIM" />
+          <ScalarProperty Name="CIM" ColumnName="CIM" />
+          <ScalarProperty Name="Updates" ColumnName="Updates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Update_Type">
+      <EntityTypeMapping TypeName="Model.Update_Type">
+        <MappingFragment StoreEntitySet="Update_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Update_Type1" ColumnName="Update_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInformations">
+      <EntityTypeMapping TypeName="Model.UserInformation">
+        <MappingFragment StoreEntitySet="UserInformation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="MobileNum" ColumnName="MobileNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AffectedAreas">
+      <EntityTypeMapping TypeName="Model.AffectedArea">
+        <MappingFragment StoreEntitySet="AffectedArea">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AffectedArea1" ColumnName="AffectedArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Model.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Model.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Model.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
